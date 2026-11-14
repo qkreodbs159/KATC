@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#132b45"><title>수료식 행사 안내</title>
+<style>
+:root{--navy:#17324d;--blue:#24577b;--ink:#18212b;--muted:#667482;--line:#d8e0e7;--paper:#fff;--bg:#f2f5f8;--red:#d92d20;--soft:#eaf1f6}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:system-ui,-apple-system,"Malgun Gothic","맑은 고딕",sans-serif;color:var(--ink)}
+header{background:linear-gradient(120deg,#10263c,#285477);color:#fff;padding:25px 18px 28px;text-align:center}header .eyebrow{font-size:12px;letter-spacing:.16em;opacity:.8}header h1{font-size:clamp(23px,5vw,32px);margin:8px 0 5px}header p{margin:0;color:#dce8f1;font-size:14px}
+main{max-width:980px;margin:24px auto;padding:0 16px 50px}.panel{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 24px #1a35500b;margin-bottom:18px;overflow:hidden}.panel-head{padding:18px 20px 0}.panel-head h2{font-size:18px;margin:0}.panel-head p{font-size:13px;color:var(--muted);margin:6px 0 0}.search{padding:18px 20px 22px;display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:7px}.field input{width:100%;border:1px solid #cbd5df;border-radius:10px;padding:13px 12px;font-size:16px;outline:none}.field input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #24577b1a}button{border:0;border-radius:10px;background:var(--navy);color:white;padding:14px 22px;font-size:15px;font-weight:700;cursor:pointer}button:hover{background:#254d70}.hint{padding:0 20px 17px;color:var(--muted);font-size:12px}.status{margin:0 20px 18px;padding:12px 14px;border-radius:10px;background:#f5f7f9;color:#526170;font-size:14px}.status.error{background:#fff1f0;color:#b42318}.status.ok{background:#ecfdf3;color:#067647}
+.hidden{display:none!important}.result{padding:0 20px 22px}.result-top{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:17px}.identity{display:flex;gap:10px;align-items:center}.avatar{width:44px;height:44px;border-radius:13px;background:var(--soft);color:var(--navy);display:grid;place-items:center;font-size:20px;font-weight:800}.identity h3{margin:0;font-size:18px}.identity p{margin:3px 0 0;font-size:13px;color:var(--muted)}.pill{background:#edf4f8;color:#1b4b6a;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:800}.notice{margin-top:18px;border:1px solid var(--line);border-radius:14px;overflow:hidden}.notice-title{background:#f7f9fb;padding:14px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:center}.notice-title h3{margin:0;font-size:17px}.notice-title span{font-size:12px;color:var(--muted)}.notice-body{padding:16px}.info-box{border:1px solid #cfd8e1;border-radius:10px;padding:14px 16px;margin-bottom:18px}.info-box h4{margin:0 0 10px;font-size:14px}.info-box ul{padding-left:19px;margin:0;color:#4d5b68;font-size:13px;line-height:1.9}.venue{border:1px solid #aab6c1;border-radius:40px;padding:18px 14px 22px;background:#fcfdfe}.stage{margin:0 auto 15px;width:min(270px,75%);text-align:center;border:1px solid #8998a6;padding:9px;background:#fff;font-weight:800;font-size:14px}.flag{margin:0 auto 16px;width:100px;text-align:center;border:1px solid #b5c0c9;padding:6px;font-size:12px;background:#fff}.companies{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:660px;margin:auto}.company{border:1px solid #9eabb7;background:#fff;min-height:78px;display:grid;place-content:center;text-align:center;font-size:13px;line-height:1.55;padding:5px}.company.active{border:2px solid var(--blue);background:#edf5fa;font-weight:800}.legend{font-size:11px;color:var(--muted);text-align:center;margin-top:9px}.roster-wrap{margin-top:20px}.roster-wrap h4{font-size:15px;margin:0 0 9px}.roster{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.seat{border:1px solid #b9c4ce;border-radius:8px;padding:10px 7px;text-align:center;min-height:65px;background:#fff}.seat .num{font-size:11px;color:#647382}.seat .name{font-size:13px;font-weight:700;margin-top:3px}.seat.target{outline:3px solid var(--red);outline-offset:1px;border-color:var(--red);background:#fff4f2}.target-note{display:flex;gap:8px;align-items:center;color:#b42318;font-size:12px;font-weight:700;margin:12px 0 0}.red-swatch{width:17px;height:17px;border:3px solid var(--red);border-radius:4px;display:inline-block}.foot{font-size:11px;color:#73808b;text-align:center;margin:20px 0 0;line-height:1.7}.demo{background:#fff8e7;border:1px solid #f2d28b;color:#815b12;border-radius:10px;padding:11px 13px;font-size:12px;line-height:1.6;margin-bottom:15px}.footer{text-align:center;color:#87939e;font-size:11px;padding:5px 0 20px}
+@media(max-width:650px){.search{grid-template-columns:1fr}.search button{width:100%}.companies{gap:5px}.company{font-size:11px;min-height:68px}.roster{grid-template-columns:repeat(2,minmax(0,1fr))}.notice-body{padding:12px}.venue{padding:14px 8px 18px}.panel-head{padding:16px 16px 0}.search{padding:16px}.hint{padding:0 16px 15px}.result{padding:0 16px 18px}}
+@media print{body{background:#fff}.search-panel,header,.footer{display:none!important}main{margin:0;max-width:none;padding:0}.panel{box-shadow:none;border:0}.result{padding:0}.notice{break-inside:avoid}.notice-body{padding:12px}}
+</style></head>
+<body>
+<header><div class="eyebrow">GRADUATION CEREMONY GUIDE</div><h1>수료식 행사 안내</h1><p>훈련병 정보를 입력하면 소속 중대와 행사장 위치를 확인할 수 있습니다.</p></header>
+<main>
+<section class="panel search-panel">
+ <div class="panel-head"><h2>훈련병 위치 찾기</h2><p>훈련병의 이름과 생년월일을 입력해 주세요.</p></div>
+ <form class="search" id="searchForm">
+  <div class="field"><label for="name">훈련병 이름</label><input id="name" name="name" placeholder="예: 박대윤" autocomplete="off" required></div>
+  <div class="field"><label for="birth">생년월일</label><input id="birth" name="birth" placeholder="예: 20050120" inputmode="numeric" maxlength="10" autocomplete="off" required></div>
+  <button type="submit">위치 확인</button>
+ </form>
+ <div class="hint">생년월일은 숫자 8자리로 입력해 주세요. (예: 20050120)</div>
+ <div id="status" class="status" role="status">가상 훈련병 데이터로 검색을 테스트할 수 있습니다.</div>
+</section>
+<section class="panel hidden" id="resultPanel" aria-live="polite">
+ <div class="result">
+  <div class="result-top"><div class="identity"><div class="avatar">✓</div><div><h3 id="resultName"></h3><p id="resultMeta"></p></div></div><span class="pill" id="companyPill"></span></div>
+  <div class="notice">
+   <div class="notice-title"><h3 id="noticeHeading">수료식 행사 안내문</h3><span>개인별 위치 안내</span></div>
+   <div class="notice-body">
+    <div class="demo"><b>시제품 안내</b> 실제 행사 공지사항과 좌석 배치도가 아직 제공되지 않아, 안내문 문구와 편성 위치는 시연용 예시입니다. 실제 운영 전 공식 자료로 교체해야 합니다.</div>
+    <div class="info-box"><h4>행사 안내</h4><ul><li>행사장에 도착하시면 아래 배치도를 확인해 주십시오.</li><li>소속 중대와 훈련병 번호·이름을 확인한 뒤 표시된 위치를 찾아 주십시오.</li><li>행사 진행요원의 안내에 협조해 주시기 바랍니다.</li><li>본 안내문은 가상 데이터를 이용한 화면 구성 예시입니다.</li></ul></div>
+    <h4 style="margin:0 0 10px;font-size:15px">연무관 배치도</h4>
+    <div class="venue"><div class="stage">사 열 대</div><div class="flag">기수단</div><div class="companies" id="companyMap"></div></div>
+    <div class="roster-wrap"><h4 id="rosterHeading">훈련병 위치 편성표</h4><div class="roster" id="roster"></div><div class="target-note"><span class="red-swatch"></span> 검색한 훈련병의 번호와 이름이 빨간색 테두리로 표시됩니다.</div></div>
+    <div class="foot">※ 배치도상의 좌석은 시연을 위해 임의로 배정한 위치입니다.<br>실제 수료식 운영 시 승인된 편성표와 공식 안내사항으로 교체하십시오.</div>
+   </div>
+  </div>
+ </div>
+</section>
+<div class="footer">수료식 행사 안내 시제품 · 가상 데이터 전용</div>
+</main>
+<script>
+// 가상 데이터: 사용자가 제공한 .cell 파일의 내용을 옮겼습니다.
+const trainees = [
+ {number:"101", name:"박대윤", birth:"20050120", company:9},
+ {number:"102", name:"고승찬", birth:"20041226", company:9},
+ {number:"103", name:"장주원", birth:"20050709", company:9},
+ {number:"104", name:"박대윤", birth:"20060115", company:9},
+ {number:"101", name:"최준규", birth:"20040819", company:10},
+ {number:"101", name:"이지훈", birth:"20051211", company:11},
+ {number:"101", name:"허성빈", birth:"20040606", company:12}
+];
+// 좌석 위치는 원본 데이터에 없으므로 시연용으로 중대별 첫 칸부터 배정합니다.
+const positions = {9:[0,1,2,3],10:[0],11:[0],12:[0]};
+const $ = id => document.getElementById(id);
+function normalizeBirth(v){return v.replace(/\D/g,'')}
+function showStatus(msg,type=''){const s=$('status');s.textContent=msg;s.className='status '+type}
+function render(trainee){
+ $('resultPanel').classList.remove('hidden');
+ $('resultName').textContent=trainee.name;
+ $('resultMeta').textContent=`${trainee.birth.slice(0,4)}.${trainee.birth.slice(4,6)}.${trainee.birth.slice(6,8)} · 훈련병 ${trainee.number}번`;
+ $('companyPill').textContent=`${trainee.company}중대`;
+ $('noticeHeading').textContent=`${trainee.company}중대 수료식 행사 안내문`;
+ $('rosterHeading').textContent=`${trainee.company}중대 훈련병 위치 편성표`;
+ const allCompanies=[9,10,11,12];
+ $('companyMap').innerHTML=allCompanies.map(c=>`<div class="company ${c===trainee.company?'active':''}"><b>${c}중대</b><span>${c===trainee.company?'선택 중대':'행사장 구역'}</span></div>`).join('');
+ const members=trainees.filter(t=>t.company===trainee.company);
+ // 각 중대별 시연용 편성표: 실제 좌표/행열 자료를 받으면 그대로 교체할 수 있습니다.
+ const seats=Array.from({length:24},(_,i)=>{
+   const member=members[i];
+   if(member) return `<div class="seat ${member.number===trainee.number&&member.name===trainee.name&&member.birth===trainee.birth?'target':''}"><div class="num">${member.number}번</div><div class="name">${member.name}</div></div>`;
+   return `<div class="seat"><div class="num">—</div><div class="name">빈 위치</div></div>`;
+ }).join('');
+ $('roster').innerHTML=seats;
+ $('resultPanel').scrollIntoView({behavior:'smooth',block:'start'});
+}
+$('searchForm').addEventListener('submit',e=>{
+ e.preventDefault(); const name=$('name').value.trim(); const birth=normalizeBirth($('birth').value);
+ $('resultPanel').classList.add('hidden');
+ if(!name||!/^\d{8}$/.test(birth)){showStatus('이름과 생년월일 8자리를 정확히 입력해 주세요.','error');return}
+ const matches=trainees.filter(t=>t.name===name&&t.birth===birth);
+ if(matches.length===1){showStatus('훈련병 정보가 확인되었습니다. 해당 중대의 안내문을 표시합니다.','ok');render(matches[0]);}
+ else if(matches.length>1){showStatus('동일한 정보가 여러 건 확인되었습니다. 관리자에게 확인이 필요합니다.','error');}
+ else{showStatus('일치하는 훈련병 정보를 찾을 수 없습니다. 이름과 생년월일을 다시 확인해 주세요.','error');}
+});
+$('birth').addEventListener('input',e=>{const v=e.target.value.replace(/\D/g,'').slice(0,8);e.target.value=v;});
+</script>
+</body></html>
